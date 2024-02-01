@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/app  # Mount the application code as a volume
+    command: /start-reload.sh  # Use the live reload script
+    restart: always
